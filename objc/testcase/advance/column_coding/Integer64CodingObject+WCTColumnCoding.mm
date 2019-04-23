@@ -22,12 +22,12 @@
 
 @implementation Integer64CodingObject (WCTColumnCoding)
 
-+ (instancetype)unarchiveWithWCTValue:(NSNumber *)value
++ (instancetype)unarchiveWithWCTValue:(WCTValue *)value
 {
-    return [[Integer64CodingObject alloc] initWithValue:value.integerValue];
+    return [[Integer64CodingObject alloc] initWithValue:value.numberValue.integerValue];
 }
 
-- (NSNumber *)archivedWCTValue
+- (WCTValue *)archivedWCTValue
 {
     return [NSNumber numberWithLongLong:self.value];
 }

@@ -22,12 +22,12 @@
 
 @implementation DataCodingObject (WCTColumnCoding)
 
-+ (instancetype)unarchiveWithWCTValue:(NSData *)value
++ (instancetype)unarchiveWithWCTValue:(WCTValue *)value
 {
-    return [[DataCodingObject alloc] initWithValue:value];
+    return [[DataCodingObject alloc] initWithValue:value.dataValue];
 }
 
-- (NSData *)archivedWCTValue
+- (WCTValue *)archivedWCTValue
 {
     return self.value;
 }

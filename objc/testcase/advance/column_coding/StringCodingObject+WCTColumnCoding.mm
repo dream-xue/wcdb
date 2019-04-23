@@ -22,12 +22,12 @@
 
 @implementation StringCodingObject (WCTColumnCoding)
 
-+ (instancetype)unarchiveWithWCTValue:(NSString *)value
++ (instancetype)unarchiveWithWCTValue:(WCTValue *)value
 {
-    return [[StringCodingObject alloc] initWithValue:value];
+    return [[StringCodingObject alloc] initWithValue:value.stringValue];
 }
 
-- (NSString *)archivedWCTValue
+- (WCTValue *)archivedWCTValue
 {
     return self.value;
 }

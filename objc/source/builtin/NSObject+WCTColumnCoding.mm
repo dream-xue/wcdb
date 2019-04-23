@@ -24,18 +24,18 @@
 
 @implementation NSObject (WCTColumnCoding)
 
-+ (instancetype)unarchiveWithWCTValue:(NSData *)value
++ (instancetype)unarchiveWithWCTValue:(WCTValue *)value
 {
     if (value != nil) {
         if (WCDB::Console::debuggable()) {
             WCTRemedialAssert([self.class conformsToProtocol:@protocol(NSCoding)], "Class should conform to NSCoding or WCTColumnCoding.", return nil;);
         }
-        return [NSKeyedUnarchiver unarchiveObjectWithData:value];
+        return [NSKeyedUnarchiver unarchiveObjectWithData:value.dataValue];
     }
     return nil;
 }
 
-- (NSData *)archivedWCTValue
+- (WCTValue *)archivedWCTValue
 {
     if (WCDB::Console::debuggable()) {
         WCTRemedialAssert([self.class conformsToProtocol:@protocol(NSCoding)], "Class should conform to NSCoding or WCTColumnCoding.", return nil;);

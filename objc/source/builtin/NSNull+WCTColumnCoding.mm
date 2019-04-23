@@ -22,13 +22,13 @@
 
 @implementation NSNull (WCTColumnCoding)
 
-+ (instancetype)unarchiveWithWCTValue:(id)value
++ (instancetype)unarchiveWithWCTValue:(WCTValue*)value
 {
     WCDB_UNUSED(value)
     return [NSNull null];
 }
 
-- (id)archivedWCTValue
+- (WCTValue*)archivedWCTValue
 {
     return nil;
 }

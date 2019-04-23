@@ -22,15 +22,15 @@
 
 @implementation NSDate (WCTColumnCoding)
 
-+ (instancetype)unarchiveWithWCTValue:(NSNumber *)value
++ (instancetype)unarchiveWithWCTValue:(WCTValue *)value
 {
     if (value == nil) {
         return nil;
     }
-    return [NSDate dateWithTimeIntervalSince1970:value.doubleValue];
+    return [NSDate dateWithTimeIntervalSince1970:value.numberValue.doubleValue];
 }
 
-- (NSNumber *)archivedWCTValue
+- (WCTValue *)archivedWCTValue
 {
     return [NSNumber numberWithDouble:self.timeIntervalSince1970];
 }

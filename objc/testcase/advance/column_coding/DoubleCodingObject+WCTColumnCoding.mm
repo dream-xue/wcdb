@@ -22,12 +22,12 @@
 
 @implementation DoubleCodingObject (WCTColumnCoding)
 
-+ (instancetype)unarchiveWithWCTValue:(NSNumber *)value
++ (instancetype)unarchiveWithWCTValue:(WCTValue *)value
 {
-    return [[DoubleCodingObject alloc] initWithValue:value.doubleValue];
+    return [[DoubleCodingObject alloc] initWithValue:value.numberValue.doubleValue];
 }
 
-- (NSNumber *)archivedWCTValue
+- (WCTValue *)archivedWCTValue
 {
     return [NSNumber numberWithDouble:self.value];
 }

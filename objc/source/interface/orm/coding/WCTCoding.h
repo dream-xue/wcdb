@@ -35,8 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol WCTColumnCoding
 @required
-+ (nullable instancetype)unarchiveWithWCTValue:(nullable id /* NSData*, NSString*, NSNumber*, nil */)value;
-- (nullable id /* NSData*, NSString*, NSNumber*, nil */)archivedWCTValue;
++ (nullable instancetype)unarchiveWithWCTValue:(nullable WCTValue * /* NSData*, NSString*, NSNumber*, nil */)value;
+- (nullable WCTValue * /* NSData*, NSString*, NSNumber*, nil */)archivedWCTValue;
 + (WCDB::ColumnType)columnType;
 @end
 

@@ -22,12 +22,12 @@
 
 @implementation NSData (WCTColumnCoding)
 
-+ (instancetype)unarchiveWithWCTValue:(NSData *)value
++ (instancetype)unarchiveWithWCTValue:(WCTValue *)value
 {
-    return value;
+    return value.dataValue;
 }
 
-- (NSData *)archivedWCTValue
+- (WCTValue *)archivedWCTValue
 {
     return self;
 }
